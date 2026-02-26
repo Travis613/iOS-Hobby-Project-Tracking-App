@@ -14,6 +14,7 @@ class HobbyGroupsViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
         title = "Hobby Projects"
         view.backgroundColor = .white
         buildTableView()
@@ -32,8 +33,7 @@ class HobbyGroupsViewController: UIViewController{
         ])
     }
     
-    /*
-    @IBAction func addItem(_ sender: Any) {
+    @objc func addItem(_ sender: Any) {
         let container = UIView(frame: CGRect(x: 37.5, y: 125, width: 325, height: 130))
         container.layer.borderWidth = 0.5
         container.layer.cornerRadius = 10
@@ -54,7 +54,7 @@ class HobbyGroupsViewController: UIViewController{
         cancelBTN.layer.borderColor = UIColor.lightGray.cgColor
         container.addSubview(cancelBTN)
         
-        let addBTN = UIButton(frame: CGRect(x: 210, y: 85, width: 100, height: 30), primaryAction: addNewHobby)
+        let addBTN = UIButton(frame: CGRect(x: 210, y: 85, width: 100, height: 30))
         addBTN.backgroundColor = UIColor.systemMint
         addBTN.setTitle("Add", for: .normal)
         addBTN.layer.cornerRadius = 10
@@ -64,7 +64,7 @@ class HobbyGroupsViewController: UIViewController{
         
         view.addSubview(container)
         
-    }*/
+    }
     
 }
 
